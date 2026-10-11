@@ -1,0 +1,24 @@
+# Alternativa sem Docker. Copiar para /etc/systemd/system/mcp-defime.service
+[Unit]
+Description=mcp-defime (MCP server HTTP)
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=mcp-defime
+Group=mcp-defime
+WorkingDirectory=/opt/mcp-defime
+EnvironmentFile=/opt/mcp-defime/.env
+Environment=MCP_TRANSPORT=http MCP_HOST=127.0.0.1 MCP_PORT=8000
+ExecStart=/opt/mcp-defime/.venv/bin/mcp-defime
+Restart=on-failure
+RestartSec=5
+NoNewPrivileges=true
+ProtectSystem=strict
+ProtectHome=true
+ReadWritePaths=/opt/mcp-defime/cache
+PrivateTmp=true
+
+[Install]
+WantedBy=multi-user.target

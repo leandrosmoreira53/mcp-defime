@@ -1,0 +1,150 @@
+{
+ "exchanges": [
+  {
+   "request": [
+    {
+     "jsonrpc": "2.0",
+     "id": 0,
+     "method": "eth_blockNumber",
+     "params": []
+    }
+   ],
+   "response": [
+    {
+     "id": 0,
+     "jsonrpc": "2.0",
+     "result": "0x402cc73"
+    }
+   ]
+  },
+  {
+   "request": [
+    {
+     "jsonrpc": "2.0",
+     "id": 0,
+     "method": "eth_call",
+     "params": [
+      {
+       "to": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+       "data": "0x1e2eaeaf3d1a39dd2bcea9bdebf1dcec9ffaffa6110a7d9d0eb9bbe3628ee473db50a28e"
+      },
+      "0x402cc73"
+     ]
+    },
+    {
+     "jsonrpc": "2.0",
+     "id": 1,
+     "method": "eth_call",
+     "params": [
+      {
+       "to": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+       "data": "0x1e2eaeaf3d1a39dd2bcea9bdebf1dcec9ffaffa6110a7d9d0eb9bbe3628ee473db50a291"
+      },
+      "0x402cc73"
+     ]
+    },
+    {
+     "jsonrpc": "2.0",
+     "id": 2,
+     "method": "eth_call",
+     "params": [
+      {
+       "to": "0x58daec3116aae6d93017baaea7749052e8a04fa7",
+       "data": "0x86b6be7d9666ba19430380456bff5ac9d35a7ee2a6c6bc895bcc7ab92d00000000000000"
+      },
+      "0x402cc73"
+     ]
+    }
+   ],
+   "response": [
+    {
+     "id": 2,
+     "jsonrpc": "2.0",
+     "result": "0x0000000000000000000000000000000000000000000000000000000000000000000000000000000000000000b1969f6604ca1ae7a2cd3f1827876e914594ca2d000000000000000000000000000000000000000000000000000000000000bea000000000000000000000000000000000000000000000000000000000000001e80000000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+     "id": 1,
+     "jsonrpc": "2.0",
+     "result": "0x0000000000000000000000000000000000000000000000018cbd08d8e8e8db76"
+    },
+    {
+     "id": 0,
+     "jsonrpc": "2.0",
+     "result": "0x00000000bea03e83e800f5a900000000000000173412e4f0eced507fa1c63b42"
+    }
+   ]
+  },
+  {
+   "request": [
+    {
+     "jsonrpc": "2.0",
+     "id": 0,
+     "method": "eth_call",
+     "params": [
+      {
+       "to": "0xb1969f6604ca1ae7a2cd3f1827876e914594ca2d",
+       "data": "0x313ce567"
+      },
+      "0x402cc73"
+     ]
+    },
+    {
+     "jsonrpc": "2.0",
+     "id": 1,
+     "method": "eth_call",
+     "params": [
+      {
+       "to": "0xb1969f6604ca1ae7a2cd3f1827876e914594ca2d",
+       "data": "0x95d89b41"
+      },
+      "0x402cc73"
+     ]
+    }
+   ],
+   "response": [
+    {
+     "id": 1,
+     "jsonrpc": "2.0",
+     "result": "0x000000000000000000000000000000000000000000000000000000000000002000000000000000000000000000000000000000000000000000000000000000025445000000000000000000000000000000000000000000000000000000000000"
+    },
+    {
+     "id": 0,
+     "jsonrpc": "2.0",
+     "result": "0x0000000000000000000000000000000000000000000000000000000000000012"
+    }
+   ]
+  }
+ ],
+ "decoded": {
+  "source": "onchain",
+  "rpc": "https://rpc-robinhood.blockmachine.io",
+  "block": 67292275,
+  "protocol": "uniswap_v4",
+  "token0": {
+   "address": "0x0000000000000000000000000000000000000000",
+   "symbol": "ETH",
+   "decimals": 18
+  },
+  "token1": {
+   "address": "0xb1969f6604ca1ae7a2cd3f1827876e914594ca2d",
+   "symbol": "TE",
+   "decimals": 18
+  },
+  "fee_tier_pct": 4.88,
+  "swap_fee_total_pct": 4.9751199999999995,
+  "lp_fee_pct": 4.87512,
+  "protocol_fee_share": null,
+  "protocol_fee_pct": 0.1,
+  "dynamic_fee": false,
+  "hooks": "0x0000000000000000000000000000000000000000",
+  "tick": 62889,
+  "tick_spacing": 488,
+  "sqrt_price_x96": "1838363800147391833791281904450",
+  "active_liquidity": "28588015737331309430",
+  "price_token1_per_token0": 538.3983889635288,
+  "price_token0_per_token1": 0.001857360684018949,
+  "notes": [
+   "protocolFee de 0.1% cobrado sobre a entrada: o swap paga 4.975% e o LP recebe 4.875%."
+  ]
+ }
+}

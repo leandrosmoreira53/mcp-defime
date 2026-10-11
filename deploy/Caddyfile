@@ -1,0 +1,10 @@
+# Alternativa ao Nginx (HTTPS automático). Troque o domínio.
+mcp.SEUDOMINIO {
+    @mcp path /mcp /mcp/* /healthz
+    handle @mcp {
+        reverse_proxy 127.0.0.1:8000 {
+            flush_interval -1
+        }
+    }
+    handle { respond 404 }
+}

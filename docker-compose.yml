@@ -1,0 +1,22 @@
+services:
+  mcp-defime:
+    build: .
+    container_name: mcp-defime
+    restart: unless-stopped
+    env_file: .env
+    environment:
+      MCP_TRANSPORT: http
+      MCP_HOST: 0.0.0.0
+      MCP_PORT: 8000
+      CACHE_PATH: /app/cache/defime.db
+    ports:
+      - "127.0.0.1:8000:8000"   # só localhost; o acesso público passa pelo proxy HTTPS
+    volumes:
+      - defime-cache:/app/cache
+    read_only: true
+    tmpfs: [/tmp]
+    security_opt: [no-new-privileges:true]
+    mem_limit: 256m
+
+volumes:
+  defime-cache:
